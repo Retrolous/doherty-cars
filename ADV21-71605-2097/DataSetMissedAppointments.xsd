@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMissedAppointment" targetNamespace="http://tempuri.org/DataSetMissedAppointment.xsd" xmlns:mstns="http://tempuri.org/DataSetMissedAppointment.xsd" xmlns="http://tempuri.org/DataSetMissedAppointment.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DoCarsDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DoCarsDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Petkunas__Lukas___Doherty_Cars.Properties.Settings.GlobalReference.Default.DoCarsDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtaMissedAppointmentsTableAdapter" GeneratorDataComponentClassName="dtaMissedAppointmentsTableAdapter" Name="dtaMissedAppointments" UserDataComponentName="dtaMissedAppointmentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DoCarsDBConnectionString (Settings)" DbObjectName="dbo.ServiceAppointments" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+sa.AppointmentID,
+s.Firstname + ' ' + s.Surname AS 'Mechanic',
+v.Make + ' ' + v.Model AS 'Car',
+sa.AppointmentStart
+FROM ServiceAppointments AS sa
+INNER JOIN Staff AS s
+ON sa.StaffID = s.StaffID
+INNER JOIN Vehicles as v
+ON v.VehicleID = sa.VehicleID
+-- where the appointment was supposed to finished before the current time and it is not completed
+WHERE sa.Completed = 0 AND sa.AppointmentEnd &lt; GETDATE() AND sa.DateDeleted IS NULL;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AppointmentID" DataSetColumn="AppointmentID" />
+              <Mapping SourceColumn="Mechanic" DataSetColumn="Mechanic" />
+              <Mapping SourceColumn="Car" DataSetColumn="Car" />
+              <Mapping SourceColumn="AppointmentStart" DataSetColumn="AppointmentStart" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMissedAppointment" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMissedAppointment" msprop:Generator_UserDSName="DataSetMissedAppointment">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtaMissedAppointments" msprop:Generator_TableClassName="dtaMissedAppointmentsDataTable" msprop:Generator_TableVarName="tabledtaMissedAppointments" msprop:Generator_TablePropName="dtaMissedAppointments" msprop:Generator_RowDeletingName="dtaMissedAppointmentsRowDeleting" msprop:Generator_RowChangingName="dtaMissedAppointmentsRowChanging" msprop:Generator_RowEvHandlerName="dtaMissedAppointmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtaMissedAppointmentsRowDeleted" msprop:Generator_UserTableName="dtaMissedAppointments" msprop:Generator_RowChangedName="dtaMissedAppointmentsRowChanged" msprop:Generator_RowEvArgName="dtaMissedAppointmentsRowChangeEvent" msprop:Generator_RowClassName="dtaMissedAppointmentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AppointmentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAppointmentID" msprop:Generator_ColumnPropNameInRow="AppointmentID" msprop:Generator_ColumnPropNameInTable="AppointmentIDColumn" msprop:Generator_UserColumnName="AppointmentID" type="xs:int" />
+              <xs:element name="Mechanic" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMechanic" msprop:Generator_ColumnPropNameInRow="Mechanic" msprop:Generator_ColumnPropNameInTable="MechanicColumn" msprop:Generator_UserColumnName="Mechanic" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Car" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCar" msprop:Generator_ColumnPropNameInRow="Car" msprop:Generator_ColumnPropNameInTable="CarColumn" msprop:Generator_UserColumnName="Car" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AppointmentStart" msprop:Generator_ColumnVarNameInTable="columnAppointmentStart" msprop:Generator_ColumnPropNameInRow="AppointmentStart" msprop:Generator_ColumnPropNameInTable="AppointmentStartColumn" msprop:Generator_UserColumnName="AppointmentStart" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtaMissedAppointments" />
+      <xs:field xpath="mstns:AppointmentID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCustomerInterest" targetNamespace="http://tempuri.org/DataSetCustomerInterest.xsd" xmlns:mstns="http://tempuri.org/DataSetCustomerInterest.xsd" xmlns="http://tempuri.org/DataSetCustomerInterest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DoCarsDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DoCarsDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Petkunas__Lukas___Doherty_Cars.Properties.Settings.GlobalReference.Default.DoCarsDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtaCustomerInterestTableAdapter" GeneratorDataComponentClassName="dtaCustomerInterestTableAdapter" Name="dtaCustomerInterest" UserDataComponentName="dtaCustomerInterestTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DoCarsDBConnectionString (Settings)" DbObjectName="dbo.VehicleTypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+-- count the number of vehicles of that type
+COUNT(v.VehicleID) AS VehiclesSold,
+vt.Name AS VehicleTypeName
+FROM Vehicles AS v
+INNER JOIN VehicleTypes AS vt
+ON v.VehicleTypeID = vt.VehicleTypeID
+--that have not been sold to a customer
+WHERE v.CustomerID IS NOT NULL AND v.DateDeleted IS NULL
+GROUP BY vt.Name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VehicleTypeName" DataSetColumn="VehicleTypeName" />
+              <Mapping SourceColumn="VehiclesSold" DataSetColumn="VehiclesSold" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCustomerInterest" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetCustomerInterest" msprop:Generator_UserDSName="DataSetCustomerInterest">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtaCustomerInterest" msprop:Generator_TableClassName="dtaCustomerInterestDataTable" msprop:Generator_TableVarName="tabledtaCustomerInterest" msprop:Generator_RowChangedName="dtaCustomerInterestRowChanged" msprop:Generator_TablePropName="dtaCustomerInterest" msprop:Generator_RowDeletingName="dtaCustomerInterestRowDeleting" msprop:Generator_RowChangingName="dtaCustomerInterestRowChanging" msprop:Generator_RowEvHandlerName="dtaCustomerInterestRowChangeEventHandler" msprop:Generator_RowDeletedName="dtaCustomerInterestRowDeleted" msprop:Generator_RowClassName="dtaCustomerInterestRow" msprop:Generator_UserTableName="dtaCustomerInterest" msprop:Generator_RowEvArgName="dtaCustomerInterestRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VehicleTypeName" msprop:Generator_ColumnVarNameInTable="columnVehicleTypeName" msprop:Generator_ColumnPropNameInRow="VehicleTypeName" msprop:Generator_ColumnPropNameInTable="VehicleTypeNameColumn" msprop:Generator_UserColumnName="VehicleTypeName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehiclesSold" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVehiclesSold" msprop:Generator_ColumnPropNameInRow="VehiclesSold" msprop:Generator_ColumnPropNameInTable="VehiclesSoldColumn" msprop:Generator_UserColumnName="VehiclesSold" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

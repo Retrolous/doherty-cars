@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91F1D97A-8772-4150-9CDA-8B977F3E1500}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Petkunas__Lukas___Doherty_Cars</RootNamespace>
+    <AssemblyName>Petkunas, Lukas - Doherty Cars</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetAppointmentMonthlyProfitsByMechanic.cs">
+      <DependentUpon>DataSetAppointmentMonthlyProfitsByMechanic.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetAppointmentMonthlyProfitsByMechanic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAppointmentMonthlyProfitsByMechanic.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCustomerInterest.cs">
+      <DependentUpon>DataSetCustomerInterest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCustomerInterest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCustomerInterest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetInvoices.cs">
+      <DependentUpon>DataSetInvoices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetInvoices.Designer.cs">
+      <DependentUpon>DataSetInvoices.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSetMissedAppointments.cs">
+      <DependentUpon>DataSetMissedAppointments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMissedAppointments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMissedAppointments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetVehicleStock.cs">
+      <DependentUpon>DataSetVehicleStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetVehicleStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVehicleStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetVehicleTypeProfits.cs">
+      <DependentUpon>DataSetVehicleTypeProfits.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetVehicleTypeProfits.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVehicleTypeProfits.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpCustomers.Designer.cs">
+      <DependentUpon>frmHelpCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpLogs.Designer.cs">
+      <DependentUpon>frmHelpLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpParts.Designer.cs">
+      <DependentUpon>frmHelpParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpReports.Designer.cs">
+      <DependentUpon>frmHelpReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpRoles.Designer.cs">
+      <DependentUpon>frmHelpRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpServiceAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpServiceAppointments.Designer.cs">
+      <DependentUpon>frmHelpServiceAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpServices.Designer.cs">
+      <DependentUpon>frmHelpServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpStaff.Designer.cs">
+      <DependentUpon>frmHelpStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpVehicles.Designer.cs">
+      <DependentUpon>frmHelpVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHelpVehicleTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHelpVehicleTypes.Designer.cs">
+      <DependentUpon>frmHelpVehicleTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInProgress.Designer.cs">
+      <DependentUpon>frmInProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogs.Designer.cs">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPartData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPartData.Designer.cs">
+      <DependentUpon>frmPartData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStartingMainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartingMainMenuForm.Designer.cs">
+      <DependentUpon>frmStartingMainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVehicleTypeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehicleTypeData.Designer.cs">
+      <DependentUpon>frmVehicleTypeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoleData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoleData.Designer.cs">
+      <DependentUpon>frmRoleData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logging.cs" />
+    <Compile Include="MechanicSchedule.cs" />
+    <Compile Include="Part.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="ServiceAppointment.cs" />
+    <Compile Include="ComboBoxItem.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="DayAppointmentViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DayAppointmentViewer.Designer.cs">
+      <DependentUpon>DayAppointmentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnect.cs" />
+    <Compile Include="frmServiceAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceAppointments.Designer.cs">
+      <DependentUpon>frmServiceAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerData.Designer.cs">
+      <DependentUpon>frmCustomerData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServiceData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceData.Designer.cs">
+      <DependentUpon>frmServiceData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffData.Designer.cs">
+      <DependentUpon>frmStaffData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVehicleData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehicleData.Designer.cs">
+      <DependentUpon>frmVehicleData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Staff.cs" />
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="Timeblock.cs" />
+    <Compile Include="Validation.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleType.cs" />
+    <EmbeddedResource Include="DayAppointmentViewer.resx">
+      <DependentUpon>DayAppointmentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpCustomers.resx">
+      <DependentUpon>frmHelpCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpLogs.resx">
+      <DependentUpon>frmHelpLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpParts.resx">
+      <DependentUpon>frmHelpParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpReports.resx">
+      <DependentUpon>frmHelpReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpRoles.resx">
+      <DependentUpon>frmHelpRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpServiceAppointments.resx">
+      <DependentUpon>frmHelpServiceAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpServices.resx">
+      <DependentUpon>frmHelpServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpStaff.resx">
+      <DependentUpon>frmHelpStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpVehicles.resx">
+      <DependentUpon>frmHelpVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHelpVehicleTypes.resx">
+      <DependentUpon>frmHelpVehicleTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInProgress.resx">
+      <DependentUpon>frmInProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogs.resx">
+      <DependentUpon>frmLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPartData.resx">
+      <DependentUpon>frmPartData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartingMainMenuForm.resx">
+      <DependentUpon>frmStartingMainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehicleTypeData.resx">
+      <DependentUpon>frmVehicleTypeData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoleData.resx">
+      <DependentUpon>frmRoleData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceAppointments.resx">
+      <DependentUpon>frmServiceAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerData.resx">
+      <DependentUpon>frmCustomerData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceData.resx">
+      <DependentUpon>frmServiceData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffData.resx">
+      <DependentUpon>frmStaffData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehicleData.resx">
+      <DependentUpon>frmVehicleData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="rptAppointmentMonthlyProfitsByMechanic.rdlc" />
+    <EmbeddedResource Include="rptCustomerInterest.rdlc" />
+    <EmbeddedResource Include="rptInvoices.rdlc" />
+    <EmbeddedResource Include="rptMissedAppointments.rdlc" />
+    <EmbeddedResource Include="rptVehicleStock.rdlc" />
+    <EmbeddedResource Include="rptVehicleTypeProfits.rdlc" />
+    <None Include="DataSetAppointmentMonthlyProfitsByMechanic.xsc">
+      <DependentUpon>DataSetAppointmentMonthlyProfitsByMechanic.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAppointmentMonthlyProfitsByMechanic.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAppointmentMonthlyProfitsByMechanic.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetAppointmentMonthlyProfitsByMechanic.xss">
+      <DependentUpon>DataSetAppointmentMonthlyProfitsByMechanic.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCustomerInterest.xsc">
+      <DependentUpon>DataSetCustomerInterest.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCustomerInterest.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCustomerInterest.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCustomerInterest.xss">
+      <DependentUpon>DataSetCustomerInterest.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetInvoices.xsc">
+      <DependentUpon>DataSetInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetInvoices.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetInvoices.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetInvoices.xss">
+      <DependentUpon>DataSetInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMissedAppointments.xsc">
+      <DependentUpon>DataSetMissedAppointments.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMissedAppointments.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMissedAppointments.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMissedAppointments.xss">
+      <DependentUpon>DataSetMissedAppointments.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetVehicleStock.xsc">
+      <DependentUpon>DataSetVehicleStock.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetVehicleStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVehicleStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetVehicleStock.xss">
+      <DependentUpon>DataSetVehicleStock.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetVehicleTypeProfits.xsc">
+      <DependentUpon>DataSetVehicleTypeProfits.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetVehicleTypeProfits.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVehicleTypeProfits.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetVehicleTypeProfits.xss">
+      <DependentUpon>DataSetVehicleTypeProfits.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Petkunas__Lukas___Doherty_Cars.DataSetInvoicesTableAdapters.dtInvoiceDataTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Petkunas__Lukas___Doherty_Cars.DataSetInvoicesTableAdapters.dtItemsTableAdapter.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DoCarsDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DoCarsDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DoCarsDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

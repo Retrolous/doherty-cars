@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetVehicleTypeProfits" targetNamespace="http://tempuri.org/DataSetVehicleTypeProfits.xsd" xmlns:mstns="http://tempuri.org/DataSetVehicleTypeProfits.xsd" xmlns="http://tempuri.org/DataSetVehicleTypeProfits.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DoCarsDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DoCarsDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Petkunas__Lukas___Doherty_Cars.Properties.Settings.GlobalReference.Default.DoCarsDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtaVehicleTypeProfitsTableAdapter" GeneratorDataComponentClassName="dtaVehicleTypeProfitsTableAdapter" Name="dtaVehicleTypeProfits" UserDataComponentName="dtaVehicleTypeProfitsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DoCarsDBConnectionString (Settings)" DbObjectName="dbo.VehicleTypes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  
+-- calculate total profits
+SUM(v.SellPrice - v.BuyPrice) AS 'TotalProfits', 
+vt.Name AS 'VehicleType' FROM Vehicles AS v 
+INNER JOIN VehicleTypes AS vt 
+ON v.VehicleTypeID = vt.VehicleTypeID 
+WHERE v.CustomerID IS NOT NULL AND v.DateDeleted IS NULL 
+-- group by the vehicle type
+GROUP BY vt.Name; </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalProfits" DataSetColumn="TotalProfits" />
+              <Mapping SourceColumn="VehicleType" DataSetColumn="VehicleType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetVehicleTypeProfits" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetVehicleTypeProfits" msprop:Generator_UserDSName="DataSetVehicleTypeProfits">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtaVehicleTypeProfits" msprop:Generator_TableClassName="dtaVehicleTypeProfitsDataTable" msprop:Generator_TableVarName="tabledtaVehicleTypeProfits" msprop:Generator_TablePropName="dtaVehicleTypeProfits" msprop:Generator_RowDeletingName="dtaVehicleTypeProfitsRowDeleting" msprop:Generator_RowChangingName="dtaVehicleTypeProfitsRowChanging" msprop:Generator_RowEvHandlerName="dtaVehicleTypeProfitsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtaVehicleTypeProfitsRowDeleted" msprop:Generator_UserTableName="dtaVehicleTypeProfits" msprop:Generator_RowChangedName="dtaVehicleTypeProfitsRowChanged" msprop:Generator_RowEvArgName="dtaVehicleTypeProfitsRowChangeEvent" msprop:Generator_RowClassName="dtaVehicleTypeProfitsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalProfits" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalProfits" msprop:Generator_ColumnPropNameInRow="TotalProfits" msprop:Generator_ColumnPropNameInTable="TotalProfitsColumn" msprop:Generator_UserColumnName="TotalProfits" type="xs:decimal" minOccurs="0" />
+              <xs:element name="VehicleType" msprop:Generator_ColumnVarNameInTable="columnVehicleType" msprop:Generator_ColumnPropNameInRow="VehicleType" msprop:Generator_ColumnPropNameInTable="VehicleTypeColumn" msprop:Generator_UserColumnName="VehicleType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
