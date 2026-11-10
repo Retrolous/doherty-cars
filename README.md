@@ -14,4 +14,6 @@ C# · Windows Forms (.NET 8) · Microsoft SQL Server · ReportViewer · Visual S
 
 ## Process
 
-Waterfall methodology with 32 documented requirements, Gantt and PERT planning, full design documentation, white-box, unit, integration, system and acceptance testing, and a written evaluation. The full write-up and user guide are in the PDFs in the repo.
+Waterfall methodology with 32 documented requirements, Gantt and PERT planning, full design documentation, white-box, unit, integration, system and acceptance testing, and a written evaluation. The full write-up and user guide are in the PDFs in the repo. 
+
+*Note that version management was done internally, so no previous commits will be visible in the repository. Regardless, constant back-ups and incremental saves were conducted throughout the lifecycle to ensure no loss of data and/or broken code.*
